@@ -11,7 +11,8 @@ const Card: React.FC<cartType> = ({
   price,
   bgColor,
 }) => {
-  const { addItemCart } = React.useContext(CustomContext);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { addItemCart }: any = React.useContext(CustomContext);
 
   const props = {
     id,

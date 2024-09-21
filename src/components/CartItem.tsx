@@ -11,7 +11,8 @@ const CartItem: React.FC<cartType> = ({
   bgColor,
   quantity,
 }) => {
-  const { deleteItemCart, addQuantityItem, removeQuantityItem } =
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { deleteItemCart, addQuantityItem, removeQuantityItem }: any =
     React.useContext(CustomContext);
   return (
     <div className="bg-[#3B558E]/60 m-4 py-4 px-8 flex items-center justify-between mt-8 rounded-3xl relative cart-item">

@@ -2,10 +2,12 @@ import React from "react";
 
 import { cartType, CustomContext } from "../App";
 import CartItem from "./CartItem";
+import { JSX } from "react/jsx-runtime";
 
 const ModalCart = () => {
   const divRef = React.useRef<HTMLDivElement>(null);
-  const { setModal, cart } = React.useContext(CustomContext);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { setModal, cart }: any = React.useContext(CustomContext);
   const setModalClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.target === divRef.current) {
       setModal(false);
@@ -36,7 +38,7 @@ const ModalCart = () => {
         <div>
           <h1 className="text-6xl cart-text text-center m-4">Корзина</h1>
           <div className="h-[68vh] overflow-y-auto">
-            {cart.map((item) => (
+            {cart.map((item: JSX.IntrinsicAttributes & cartType) => (
               <CartItem key={Math.random()} {...item} />
             ))}
           </div>

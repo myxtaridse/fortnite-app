@@ -92,7 +92,7 @@ function App() {
         if (data.shop) {
           setIsLoading(true);
           const sorted = data.shop.filter(
-            (item: any) => item.mainType !== "sparks_song"
+            (item: { mainType: string }) => item.mainType !== "sparks_song"
           );
 
           setData(sorted);
@@ -101,7 +101,8 @@ function App() {
       });
   }, [isLoading]);
 
-  const value = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const value: any = {
     data: isLoading ? isData : [],
     setModal,
     addItemCart,

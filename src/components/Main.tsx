@@ -3,7 +3,8 @@ import Card from "./Card";
 import { CustomContext } from "../App";
 
 const Main = () => {
-  const { data } = React.useContext(CustomContext);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { data }: any = React.useContext(CustomContext);
 
   return (
     <div className="bg-cards w-screen mt-[0]  items-center pt-[3rem] pb-[5rem] gap-y-9">
@@ -16,7 +17,8 @@ const Main = () => {
             displayName,
             price,
             colors,
-          }: any) =>
+          }: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          any) =>
             displayName && (
               <Card
                 key={mainId}

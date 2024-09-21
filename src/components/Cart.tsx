@@ -2,7 +2,8 @@ import React from "react";
 import { CustomContext } from "../App";
 
 const Cart = () => {
-  const { cart, setModal } = React.useContext(CustomContext);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { cart, setModal }: any = React.useContext(CustomContext);
 
   return (
     <div onClick={() => setModal(true)} className="mx-12 cursor-pointer">
